@@ -1,13 +1,9 @@
 Option Explicit
 
 Dim baseFolder, linkFile1, linkFile2, targetPath, objShell1, objShell2, desktopPath, progPath, oFSO
-
-	' Создание папки на рабочем столе
-	'Set objShell1 = Wscript.CreateObject("Wscript.Shell")
-	'desktopPath = objShell1.SpecialFolders("Desktop")
 	
 	Set oFSO = CreateObject("Scripting.FileSystemObject")	
-	oFSO.CreateFolder desktopPath & "\Rocket Ministry"
+	oFSO.CreateFolder desktopPath & "\My program"
    
 	Set objShell2 = Wscript.CreateObject("Wscript.Shell")
 	progPath = objShell2.SpecialFolders("Programs")
@@ -15,9 +11,9 @@ Dim baseFolder, linkFile1, linkFile2, targetPath, objShell1, objShell2, desktopP
 
     With WScript.CreateObject("Scripting.FileSystemObject")
         baseFolder = .BuildPath( .GetParentFolderName( WScript.ScriptFullName ), "\")
-        linkFile1   = .BuildPath( desktopPath, "Rocket Ministry.lnk" )
-		linkFile2   = .BuildPath( progPath, "Rocket Ministry.lnk" )
-	targetPath = .BuildPath( baseFolder, "Rocket Ministry.pyw" )
+        linkFile1   = .BuildPath( desktopPath, "My program.lnk" )
+	linkFile2   = .BuildPath( progPath, "My program.lnk" )
+	targetPath = .BuildPath( baseFolder, "My program.pyw" )
     End With 
 
     With WScript.CreateObject("WScript.Shell").CreateShortcut( linkFile1 )

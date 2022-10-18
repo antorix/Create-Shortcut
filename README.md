@@ -1,3 +1,3 @@
 # Create shortcut
 
-Creates a Windows desktop shortcut to a file using its relative path and a specified icon.
+Creates Windows shortcuts to Desktop and Programs for a file using its relative path and a specified icon.

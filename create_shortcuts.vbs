@@ -2,12 +2,11 @@ Option Explicit
 
 Dim baseFolder, linkFile1, linkFile2, targetPath, objShell1, objShell2, desktopPath, progPath, oFSO
 	
-	Set oFSO = CreateObject("Scripting.FileSystemObject")	
-	oFSO.CreateFolder desktopPath & "\My program"
+	Set objShell1 = Wscript.CreateObject("Wscript.Shell")
+	desktopPath = objShell1.SpecialFolders("Desktop")
    
 	Set objShell2 = Wscript.CreateObject("Wscript.Shell")
-	progPath = objShell2.SpecialFolders("Programs")
-	 
+	progPath = objShell2.SpecialFolders("Programs")	 
 
     With WScript.CreateObject("Scripting.FileSystemObject")
         baseFolder = .BuildPath( .GetParentFolderName( WScript.ScriptFullName ), "\")
